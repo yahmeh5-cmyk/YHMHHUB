@@ -1,10 +1,9 @@
+📋repeat task.wait() until game:IsLoaded() and game:GetService("Players").LocalPlayer
 
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/yahmeh5-cmyk/YHMHHUB/main/loader.lua"))()
-
-repeat task.wait() until game:IsLoaded() and game:GetService("Players").LocalPlayer
+-- YHMH HUB — Loader com auto-fix
+-- Remove lixo do inicio dos arquivos automaticamente
 
 local BASE = "https://raw.githubusercontent.com/yahmeh5-cmyk/YHMHHUB/main/"
-
 
 if not getgenv then
     getgenv = function() return _G end
@@ -18,16 +17,31 @@ getgenv().TK = {
 
 local function load(name)
     local url = BASE .. name
-    print("[YHMH] Carregando: " .. name)
+    print("[YHMH] Baixando: " .. name)
     local ok, err = pcall(function()
-        loadstring(game:HttpGet(url))()
+        local code = game:HttpGet(url)
+        
+        -- AUTO-FIX: remover qualquer coisa antes do primeiro "--"
+        local fixedCode = code
+        local dashPos = code:find("%-%-")
+        if dashPos and dashPos > 1 then
+            fixedCode = code:sub(dashPos)
+            print("[YHMH] Limpou " .. (dashPos - 1) .. " chars de lixo em " .. name)
+        end
+        
+        -- Compilar e executar
+        local fn, compileErr = loadstring(fixedCode)
+        if fn then
+            fn()
+            print("[YHMH] OK: " .. name)
+        else
+            warn("[YHMH] Erro de compilacao em " .. name .. ": " .. tostring(compileErr))
+        end
     end)
-    if ok then
-        print("[YHMH] OK: " .. name)
-    else
-        warn("[YHMH] ERRO em " .. name .. ": " .. tostring(err))
+    if not ok then
+        warn("[YHMH] Erro ao baixar " .. name .. ": " .. tostring(err))
     end
-    task.wait(0.2)
+    task.wait(0.3)
 end
 
 print("[YHMH] ========================")
@@ -42,5 +56,5 @@ load("teleport.lua")
 load("misc.lua")
 
 print("[YHMH] ========================")
-print("[YHMH] HUB carregado! Toque TK")
+print("[YHMH] HUB carregado!")
 print("[YHMH] ========================")
