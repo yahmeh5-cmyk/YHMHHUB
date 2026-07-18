@@ -1,4 +1,4 @@
-📋 Copiar-- YHMH HUB — Misc
+
 -- Character, Time, FPS, AntiAFK, RemoteSpy, Info, Utilities
 
 local TK = getgenv().TK
