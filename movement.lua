@@ -1,4 +1,4 @@
-📋 Copiar-- YHMH HUB — Movement
+
 -- Speed, Fly+DPad, Noclip, InfJump, HighJump, LowGrav, ClickTP, Freeze
 
 local TK = getgenv().TK
