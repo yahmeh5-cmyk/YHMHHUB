@@ -1,4 +1,4 @@
-📋 Copiar-- YHMH HUB — ESP
+
 -- Players, NPCs+Stats, Items, Player Stats, Chests
 
 local TK = getgenv().TK
