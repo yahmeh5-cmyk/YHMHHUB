@@ -1,4 +1,4 @@
-📋 Copiar-- YHMH HUB — Teleport
+
 -- 11 ferramentas de teleporte + slider de distancia
 
 local TK = getgenv().TK
