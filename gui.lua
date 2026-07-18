@@ -1,4 +1,4 @@
-📋 Copiar-- YHMH HUB — GUI
+
 -- Cria interface, tabs e funcoes builder
 
 local TK = getgenv().TK
