@@ -1,4 +1,4 @@
-📋repeat task.wait() until game:IsLoaded() and game:GetService("Players").LocalPlayer
+repeat task.wait() until game:IsLoaded() and game:GetService("Players").LocalPlayer
 
 -- YHMH HUB — Loader com auto-fix
 -- Remove lixo do inicio dos arquivos automaticamente
