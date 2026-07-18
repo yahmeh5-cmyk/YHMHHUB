@@ -1,4 +1,4 @@
-📋 Copiar-- YHMH HUB — Defense
+
 -- Godmode, Anti-Void, Anti-Ragdoll, Anti-Kill, Auto-Respawn, ForceField
 
 local TK = getgenv().TK
